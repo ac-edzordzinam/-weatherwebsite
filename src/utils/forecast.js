@@ -8,7 +8,7 @@ const forecast = (cityName, callback) => {
   axios.get(url)
     .then((response) => {
       // handle success
-      callback(undefined, response.data.weather[0].description + ' It is currently ' + response.data.main.temp + ' degrees out.');
+      callback(undefined, response.data.weather[0].description + ' It is currently ' + response.data.main.temp + ' degrees out. But it feels like '+ response.data.main.feels_like + ' with the highest temperature being '+ response.data.main.temp_max + " and it's lowest being " + response.data.main.temp_min);
     })
     .catch((error) => {
       // handle error
